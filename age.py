@@ -3,13 +3,13 @@ def num_check(question, low, high):
   error = "Please enter a valid number"
   while True:
     try:
-      response = int(input("Enter a number. "))
+      response = int(input(question))
       if response < low:
         print(error)
         print()
       elif response > high:
         print(error)
-        print
+        print()
       else:
         print()
         return response
@@ -17,7 +17,5 @@ def num_check(question, low, high):
       print(error)
       print()
 
-tickets_av = 150
-for i in range(0, tickets_av):
+for i in range(0, 3):
   age_verify = num_check("How old are you? ", 12, 70)
-  tickets_av -= 1
