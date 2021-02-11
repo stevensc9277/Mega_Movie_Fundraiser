@@ -1,4 +1,3 @@
-# Max rounds = 150
 # Ask user for name
 # Ask for age (must be at least 12 or print error)
 # Ask user what snack they want and how many portions
