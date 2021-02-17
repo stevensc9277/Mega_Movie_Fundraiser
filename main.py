@@ -11,18 +11,16 @@ def name_check(question):
 
 
 # This function checks to make sure that user inputs an integer between 12 and 130
-def num_check(question, low, high):
-  error = "Please enter an integer between {} and {}".format(low, high)
+def num_check(question):
+  error = "PLease enter an integer that is more than 0"
   while True:
     try:
       response = int(input(question))
-      # repeat question if input is too low or too high
-      if  response < low:
+      # repeat question if input is too low
+      if  response <= 0:
         print(error)
         print()
-      elif response > high:
-        print(error)
-        print()
+      
       # Program continues for valid input
       else:
         print()
@@ -33,9 +31,38 @@ def num_check(question, low, high):
       print()
 
   
-# Get user details (name and age)
-user = name_check("Name: ")
-age_verify = num_check("How old are you? ", 12, 130)
+
+# initialise loop so that it runs at least once
+name = ""
+count = 0
+max_tickets = 5
+while name != "xxx" and count <= max_tickets:
+  # get details
+  print("You have {} seats left".format(max_tickets - count))
+  # ask for name
+  name = name_check("Name: ")
+  
+# End the loop if exit code is entered
+  if name == "xxx":
+    break
+  count += 1
+
+  print()
+if count == max_tickets:
+  print("You have sold all available tickets")
+else:
+  print("You have {} tickets left".format(max_tickets - count + 1))
+
+
+  age = num_check("How old are you? ")
+  # Check that age is valid...
+  if age < 12:
+    print("Sorry, you are too young for this movie")
+    continue
+  elif age > 130:
+    print("That is very old - it looks like a mistake")
+    continue
+
 # Ask user what snack they want and how many portions
 # Ask for the payment method (cash/credit)
 # Credit payment incurs a 5% surcharge which is not included in the movie company's profits (goes to credit company)
