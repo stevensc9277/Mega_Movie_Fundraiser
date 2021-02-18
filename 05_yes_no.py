@@ -4,11 +4,11 @@ def yes_no(question):
   while True:
 
     # ask question and put response in lowercase
-    response = input(question).lower()
+    response = input(question).lower
     if response == "yes" or response == "y":
       return "yes"
 
-    elif response == "no" or response == "n":
+    elif response == "no" or response == "no":
       return "no"
 
     else:
