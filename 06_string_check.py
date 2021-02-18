@@ -1,5 +1,5 @@
 # string checking function takes in question and list of valid responses
-def yes_no(question, to_check):
+def string_checker(question, to_check):
   error = "Sorry that is not a valid response"
 
   while True:
@@ -18,6 +18,6 @@ def yes_no(question, to_check):
       print(error) 
 
 for item in range(0, 6):
-  want_snack = yes_no("Do you want snacks? ", ["yes", "no"])
+  want_snack = string_checker("Do you want snacks? ", ["yes", "no"])
   print("Answer OK, you said:", want_snack)
   print()
