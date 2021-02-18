@@ -1,2 +1,2 @@
 language = "Python3"
-run = "python main.py"
+run = "python 05_yes_no.py"
