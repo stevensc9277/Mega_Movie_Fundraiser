@@ -38,7 +38,7 @@ ticket_count = 0
 profit = 0
 ticket_sales = 0
 max_tickets = 5
-while name != "xxx" and ticket_count <= max_tickets:
+while name != "xxx" and ticket_count < max_tickets:
   # tells user how many seats are left
   if ticket_count < max_tickets - 1:
     print("You have {} seats left".format(max_tickets - ticket_count))
@@ -60,7 +60,7 @@ while name != "xxx" and ticket_count <= max_tickets:
   elif age > 130:
     print("That is very old - it looks like a mistake")
     continue
-  ticket_count += 1
+
 
   if age < 16:
     ticket_price = 7.5
