@@ -77,6 +77,7 @@ while name != "xxx" and ticket_count < max_tickets:
   ticket_sales += ticket_price
 
 ticket_profit = ticket_sales - (5 * ticket_count)
+print("Ticket profit: ${:.2f}".format(ticket_profit))
 # Tell user if they have unsold tickets...
 if ticket_count == max_tickets:
   print("You have sold all available tickets!")
