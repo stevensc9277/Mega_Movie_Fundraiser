@@ -75,16 +75,12 @@ while name != "xxx" and ticket_count <= max_tickets:
   
   ticket_count += 1
   ticket_sales += ticket_price
-if ticket_count == max_tickets:
-  print("You have sold all available tickets")
-else:
-  print("You have {} tickets left".format(max_tickets - ticket_count + 1))
 
-  
-# Ask user what snack they want and how many portions
-# Ask for the payment method (cash/credit)
-# Credit payment incurs a 5% surcharge which is not included in the movie company's profits (goes to credit company)
-# Calculate the cost of tickets and snacks (including the credit card surcharge if necessary)
-# Work out how many of each snack has been ordered
-# Work out the total profit (see the spreadsheet for profit details). Note that the profit on the snacks is 20% of the sales price (excluding the surcharge).
-# Print out the total cost for each ticket / snack purchase
+ticket_profit = ticket_sales - (5 * ticket_count)
+# Tell user if they have unsold tickets...
+if ticket_count == max_tickets:
+  print("You have sold all available tickets!")
+else:
+  print("You have sold {} tickets. \nThere are {} places still available".format(ticket_count, max_tickets - ticket_count))
+
+ 

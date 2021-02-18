@@ -1,2 +1,2 @@
 language = "Python3"
-run = "python 04_ticket_price.py"
+run = "python main.py"
