@@ -1,2 +1,2 @@
 language = "Python3"
-run = "python 05_yes_no.py"
+run = "python 01_name_not_blank_v1.py"
