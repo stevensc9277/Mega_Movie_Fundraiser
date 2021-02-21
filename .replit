@@ -1,2 +1,2 @@
 language = "Python3"
-run = "python 01_name_not_blank_v1.py"
+run = "python 06_string_check_v2.py"
