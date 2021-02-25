@@ -1,2 +1,2 @@
 language = "Python3"
-run = "python 06_string_func.py"
+run = "python 07_string_analysis.py"
