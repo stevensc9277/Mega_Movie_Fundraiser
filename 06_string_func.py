@@ -41,6 +41,7 @@ yes_no = [
 
 # holds snack order for a single user
 snack_order = []
+
 check_snack = "invalid choice"
 while check_snack == "invalid choice":
   want_snack = input("Do you want to order snacks? ").lower()
@@ -77,10 +78,3 @@ else:
     print(i)
 
 # loop three times to make testing quicker
-for item in range(0, 6):
-  # ask user for desired snack and put it in lowercase
-  desired_snack = input("Snack: ").lower()
-
-  # check if snack is valid
-  snack_choice = string_check(desired_snack, valid_snacks)
-  print("Snack Choice: ", snack_choice)
