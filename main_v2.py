@@ -57,21 +57,23 @@ def get_ticket_price():
 
   elif age > 130:
     print("That is very old - it looks like a mistake")
-    return "invalid tickte price"
+    return "invalid ticket price"
 
   if age < 16:
     ticket_price = 7.5
-  
+    return ticket_price
+
   elif age < 65:
     ticket_price = 10.5
+    return ticket_price
 
   else:
     ticket_price = 6.5
+    return ticket_price
 
 # initialise loop so that it runs at least once
 name = ""
 ticket_count = 0
-
 ticket_sales = 0
 max_tickets = 5
 
