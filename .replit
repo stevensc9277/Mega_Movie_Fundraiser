@@ -1,2 +1,2 @@
 language = "Python3"
-run = "python main_v2.py"
+run = "python 10_snack_lists_expt_v2.py"
