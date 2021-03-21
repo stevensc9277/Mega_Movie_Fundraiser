@@ -29,8 +29,8 @@ def string_check(choice, options):
 
 # Main routine
 pay_method = [
-  ["cash", "ca"]
-["credit", "cr"]
+  ["cash", "ca"],
+  ["credit", "cr"]
 ]
 
 # loop until exit code
@@ -42,8 +42,8 @@ while name != "xxx":
 
   how_pay = "invalid choice"
   while how_pay == "invalid choice":
-    how_pay = input("Please choose a payment method (cash / credit)? ")
-  
+    how_pay = input("Please choose a payment method (cash / credit)? ").lower()
+    how_pay = string_check(how_pay, pay_method)
   # Ask for subtotal (for testing purposes)
   subtotal = float(input("Sub total? $"))
   
@@ -52,3 +52,7 @@ while name != "xxx":
 
   else:
     surcharge = 0
+
+  total = subtotal + surcharge
+
+  print("Name: {} | Subtotal: ${:.2f} | Surcharge: ${:.2f} | Total Payable: ${:.2f}".format(name, subtotal, surcharge, total))
