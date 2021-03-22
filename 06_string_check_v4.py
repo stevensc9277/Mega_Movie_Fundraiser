@@ -11,4 +11,3 @@ yes_no = [
   ["yes", "y"],
   ["no", "n"]
 ]
-snack
