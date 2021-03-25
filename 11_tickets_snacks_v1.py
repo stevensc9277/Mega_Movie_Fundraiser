@@ -60,7 +60,7 @@ for client_order in test_data:
       add_list[-1] = amount
 
 
-
+# Create dataframe and set index to name column
 movie_frame = pandas.DataFrame(movie_data_dict)
 movie_frame = movie_frame.set_index('Name')
 

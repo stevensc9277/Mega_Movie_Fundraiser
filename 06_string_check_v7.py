@@ -63,10 +63,23 @@ def get_snack():
       desired_snack = desired_snack
     
     # remove white space around snack
-    desired_snack = desired_snack.strip
+    desired_snack = desired_snack.strip()
 
     # check if snack is valid
     snack_choice = string_check(desired_snack, valid_snacks)
+
+    # check snack amount is valid (less than 5)
+    if amount >= 5:
+      print("Sorry - e have a four snack maximum")
+      snack_choice = "invalid choice"
+
+    # add snack and amount to list...
+    snack_row.append(amount)
+    snack_order.append(snack_choice)
+
+    # check that snack is not the exit code before adding it
+    if snack_choice != "xxx" and snack_choice != "invalid choice":
+      snack_order.append(snack_row)
 
 yes_no = [
   ["yes", "y"],
