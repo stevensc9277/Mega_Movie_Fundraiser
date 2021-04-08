@@ -3,6 +3,9 @@ import pandas
 
 # Function goes here
 
+# currency formatting function
+def currency(x):
+  return "${:.2f}".format(x)
 
 # This function checks to make sure that user inputs a valid string
 def name_check(question):
@@ -316,16 +319,20 @@ for item in snack_lists:
 # Get snack total from panda
 snack_total = movie_frame['Snacks'].sum()
 snack_profit = snack_total * 0.2
-summary_data.append(snack_profit)
+
 
 # Calculate ticket profit...
 ticket_profit = ticket_sales - (5 * ticket_count)
 print("Ticket profit: ${:.2f}".format(ticket_profit))
-summary_data.append(ticket_profit)
+
 
 # Work out total profit and add to list
 total_profit = snack_profit + ticket_profit
-summary_data.append(total_profit)
+
+dollar_amounts = [snack_profit, total_profit, ticket_profit]
+for item in dollar_amounts:
+  item =  "${:.2f}".format(item)
+  summary_data.append(item)
 
 # Create summary frame
 summary_frame = pandas.DataFrame(summary_data_dict)
@@ -334,8 +341,16 @@ summary_frame = summary_frame.set_index('Item')
 # Set up columns to be printed
 pandas.set_option('display.max_columns', None)
 
-# Display numbers to 2dp
-pandas.set_option('precision', 2)
+# *** Pre Printing / Export ***
+# format currency values so they have $'s
+add_dollars = ['Tickets', 'Snacks', 'Surcharge', 'Total', 'Sub Total']
+for item in add_dollars:
+  movie_frame[item] = movie_frame[item].apply(currency)
+
+# Write each frame to a separate csv file
+movie_frame.to_csv("ticket_details.csv")
+summary_frame.to_csv("snack_summary.csv")
+
 
 print()
 print("*** Ticket / Snack Information ***")
